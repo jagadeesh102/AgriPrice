@@ -27,7 +27,7 @@ export default function App() {
     <AuthProvider>
       <LanguageProvider>
         <BrowserRouter>
-          <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+          <div className="app-shell min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
             <DemoModeBanner />
             <Navbar />
             

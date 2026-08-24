@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { useAuth } from '../context/AuthContext';
-import { Sprout, TrendingUp, BarChart3, ShieldCheck, ArrowRight, Zap, CheckCircle2, AlertTriangle, Sparkles, MapPin, Calculator, CloudSun } from 'lucide-react';
+import { TrendingUp, BarChart3, ArrowRight, Zap, CheckCircle2, AlertTriangle, Sparkles, MapPin, Calculator, CloudSun } from 'lucide-react';
 
 export default function LandingPage() {
   const { t } = useLanguage();
-  const { triggerJudgeDemo } = useAuth();
 
   return (
-    <div className="space-y-16 py-8">
+    <div className="landing-page space-y-16 py-8">
       
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 text-white rounded-3xl p-8 md:p-14 border border-emerald-800 shadow-2xl">
-        <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="premium-hero relative overflow-hidden text-white rounded-3xl p-8 md:p-14 border border-emerald-800 shadow-2xl">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-light" aria-hidden="true" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
           
@@ -63,7 +61,7 @@ export default function LandingPage() {
 
           {/* HERO DASHBOARD PREVIEW CARD */}
           <div className="lg:col-span-5">
-            <div className="agri-card-glass p-6 rounded-2xl relative shadow-2xl border border-emerald-500/30 space-y-4">
+            <div className="agri-card-glass preview-card p-6 rounded-2xl relative shadow-2xl border border-emerald-500/30 space-y-4">
               <div className="flex items-center justify-between border-b border-emerald-800/60 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="text-xl">🌶️</span>
@@ -143,7 +141,7 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
               <BarChart3 className="w-5 h-5" />
             </div>
@@ -151,7 +149,7 @@ export default function LandingPage() {
             <p className="text-xs text-slate-600 leading-relaxed">{t('feature1Desc')}</p>
           </div>
 
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
               <TrendingUp className="w-5 h-5" />
             </div>
@@ -159,7 +157,7 @@ export default function LandingPage() {
             <p className="text-xs text-slate-600 leading-relaxed">{t('feature2Desc')}</p>
           </div>
 
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center">
               <Zap className="w-5 h-5" />
             </div>
@@ -167,7 +165,7 @@ export default function LandingPage() {
             <p className="text-xs text-slate-600 leading-relaxed">{t('feature3Desc')}</p>
           </div>
 
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center">
               <MapPin className="w-5 h-5" />
             </div>
@@ -175,7 +173,7 @@ export default function LandingPage() {
             <p className="text-xs text-slate-600 leading-relaxed">{t('feature4Desc')}</p>
           </div>
 
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center">
               <CloudSun className="w-5 h-5" />
             </div>
@@ -183,7 +181,7 @@ export default function LandingPage() {
             <p className="text-xs text-slate-600 leading-relaxed">{t('feature5Desc')}</p>
           </div>
 
-          <div className="agri-card p-6 space-y-3 hover:-translate-y-1">
+          <div className="agri-card feature-card p-6 space-y-3 hover:-translate-y-1">
             <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
               <Calculator className="w-5 h-5" />
             </div>

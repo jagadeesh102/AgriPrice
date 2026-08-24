@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -9,13 +10,20 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased min-h-screen selection:bg-emerald-500 selection:text-white;
+    @apply text-slate-900 font-sans antialiased min-h-screen selection:bg-emerald-500 selection:text-white;
+    background: #f4f7f3;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 /* Custom Utilities for Premium Agricultural UI */
 .agri-card {
   @apply bg-white/90 backdrop-blur-md rounded-2xl border border-emerald-900/10 shadow-sm hover:shadow-md transition-all duration-300;
+  box-shadow: 0 12px 35px rgba(24, 64, 48, 0.06);
 }
 
 .agri-card-glass {
@@ -32,6 +40,67 @@
 
 .agri-btn-secondary {
   @apply bg-white hover:bg-slate-100 text-emerald-800 font-semibold px-6 py-3 rounded-xl border border-emerald-300 shadow-sm active:scale-98 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer;
+}
+
+.app-shell {
+  background-image: linear-gradient(rgba(21, 128, 61, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(21, 128, 61, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.premium-hero {
+  background: linear-gradient(118deg, #062b21 0%, #0d4b37 55%, #12332d 100%);
+  isolation: isolate;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image: linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, black, transparent 78%);
+  animation: grid-drift 18s linear infinite;
+  pointer-events: none;
+}
+
+.hero-light {
+  position: absolute;
+  inset: -30% 35% -30% -10%;
+  background: linear-gradient(110deg, transparent 35%, rgba(250, 204, 21, .12) 50%, transparent 65%);
+  transform: skewX(-18deg);
+  animation: light-sweep 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.preview-card {
+  animation: float-card 6s ease-in-out infinite;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .28);
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, #15803d, #f59e0b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+
+.feature-card:hover::after { transform: scaleX(1); }
+
+@keyframes grid-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(42px, 42px, 0); } }
+@keyframes light-sweep { 0%, 100% { opacity: 0; transform: translateX(-30%) skewX(-18deg); } 45%, 65% { opacity: 1; transform: translateX(30%) skewX(-18deg); } }
+@keyframes float-card { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(.4deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
 
 .agri-badge-sell {
