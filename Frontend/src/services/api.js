@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 const DEFAULT_MARKETS = [
   { id: "guntur", name: "Guntur Mandi", district: "Guntur", state: "Andhra Pradesh", type: "Primary APMC Market", lat: 16.3067, lng: 80.4365, distance_km: 12, chilli_price: 18500, turmeric_price: 12400, trend: "up" },
@@ -515,4 +515,3 @@ export const api = {
     }
   }
 };
-
