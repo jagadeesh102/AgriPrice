@@ -1,0 +1,9 @@
+{
+  "mae": 103.68,
+  "rmse": 129.79,
+  "mape": 0.84,
+  "r2": 0.9867,
+  "train_samples": 12268,
+  "test_samples": 3068,
+  "last_trained": "2026-08-12 15:35:51"
+}
